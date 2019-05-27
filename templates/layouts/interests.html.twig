@@ -6,10 +6,16 @@
   <div class="row interests">
     {% for item in module.header.interests %}
     <div class="large-3 small-6 medium-3 columns {% if loop.last %}end{% endif %} {% if item.animation %}animated {{ item.animation }}{% endif %}">
+      {% if item.link %}
+      <a href="{{item.link}}" target="_blank">
+      {% endif %}
       <div class="int_icon">
         <i class="fi-{{ item.icon }}"></i>
         <div class="activity">{{ item.activity }}</div>
       </div>
+      {% if item.link %}
+      </a>
+      {% endif %}
     </div>
     {% endfor %}
   </div>
